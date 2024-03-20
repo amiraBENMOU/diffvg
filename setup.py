@@ -92,8 +92,10 @@ if 'DIFFVG_CUDA' in os.environ:
 setup(name = 'diffvg',
       version = '0.0.1',
       install_requires = ["svgpathtools"],
+      author="Dean Moldovan",
+       author_email="dean0x7d@gmail.com",
       description = 'Differentiable Vector Graphics',
       ext_modules = [CMakeExtension('diffvg', '', build_with_cuda)],
       cmdclass = dict(build_ext=Build, install=install),
       packages = packages,
-      zip_safe = False)
+      zip_safe = True)
