@@ -99,4 +99,6 @@ setup(name = 'diffvg',
       cmdclass = dict(build_ext=Build, install=install),
       setup_requires=['setuptools_scm'], 
       packages = packages,
-      zip_safe = True)
+      zip_safe = False,)
+
+
