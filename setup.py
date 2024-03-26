@@ -97,5 +97,6 @@ setup(name = 'diffvg',
       description = 'Differentiable Vector Graphics',
       ext_modules = [CMakeExtension('diffvg', '', build_with_cuda)],
       cmdclass = dict(build_ext=Build, install=install),
+      setup_requires=['setuptools_scm'], 
       packages = packages,
       zip_safe = True)
