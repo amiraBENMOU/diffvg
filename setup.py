@@ -88,12 +88,7 @@ if len(packages) == 0:
 # Override build_with_cuda with environment variable
 if 'DIFFVG_CUDA' in os.environ:
     build_with_cuda = os.environ['DIFFVG_CUDA'] == '1'
-    use_scm_version={
-         'version_scheme': 'post-release',
-         'local_scheme': 'node-and-date',
-         "relative_to": __file__,
-         "root": "..",
-    },
+   
 
 setup(name = 'diffvg',
       version = '0.0.1',
@@ -102,8 +97,7 @@ setup(name = 'diffvg',
        author_email="dean0x7d@gmail.com",
       description = 'Differentiable Vector Graphics',
       ext_modules = [CMakeExtension('diffvg', '/kaggle/working/diffvg', build_with_cuda)],
-      cmdclass = dict(build_ext=Build, install=install),
-      setup_requires=['setuptools_scm'], 
+      cmdclass = dict("build_ext": Build), 
       packages = packages,
       zip_safe = False,)
 
